@@ -52,4 +52,20 @@ public class DispositivoService {
 		dispositivoRepo.delete(found);
 	}
 
+//	public void assegnaDispositivo(UUID utenteId, UUID dispositivoId) throws NotFoundException {
+//		Utente utente = findById(utenteId);
+//		List<Dispositivo> dispositivi = utente.getDispositivi();
+//		dispositivi.add(dispositivo);
+//		utente.setDispositivi(dispositivi);
+//		usersRepo.save(utente);
+//	}
+
+//	public void rimuoviDispositivo(UUID utenteId, Dispositivo dispositivo) throws NotFoundException {
+//		Utente utente = findById(utenteId);
+//		List<Dispositivo> dispositivi = utente.getDispositivi();
+//		dispositivi.remove(dispositivo);
+//		utente.setDispositivi(dispositivi);
+//		usersRepo.save(utente);
+//	}
+
 }

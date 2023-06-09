@@ -2,6 +2,8 @@ package simone.U2D10progetto.dispositivo;
 
 import java.util.UUID;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
@@ -30,6 +32,7 @@ public class Dispositivo {
 	@Enumerated(EnumType.STRING)
 	private Stato stato;
 	@ManyToOne
+	@JsonBackReference
 	private Utente utente;
 
 	public Dispositivo(String modello, Tipo tipo, Stato stato) {

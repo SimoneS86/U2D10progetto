@@ -8,7 +8,11 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
@@ -34,8 +38,10 @@ public class Utente implements UserDetails {
 	private String surname;
 	private String email;
 	private String password;
+	@Enumerated(EnumType.STRING)
 	private Role role;
 	@OneToMany(mappedBy = "utente")
+	@JsonManagedReference
 	private List<Dispositivo> dispositivi;
 
 	public Utente(String username, String name, String surname, String email, String password) {
@@ -77,15 +83,4 @@ public class Utente implements UserDetails {
 		return true;
 	}
 
-	// Altre implementazioni e metodi della classe Utente...
-
-	// Esempio di metodo per assegnare un dispositivo all'utente
-	public void assegnaDispositivo(Dispositivo dispositivo) {
-		dispositivi.add(dispositivo);
-	}
-
-	// Esempio di metodo per rimuovere un dispositivo dall'utente
-	public void rimuoviDispositivo(Dispositivo dispositivo) {
-		dispositivi.remove(dispositivo);
-	}
 }

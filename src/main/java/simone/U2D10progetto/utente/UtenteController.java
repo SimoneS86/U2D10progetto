@@ -21,7 +21,7 @@ import simone.U2D10progetto.exception.NotFoundException;
 import simone.U2D10progetto.utente.payload.UtenteRegistrationPayload;
 
 @RestController
-@RequestMapping("/users")
+@RequestMapping("/utenti")
 public class UtenteController {
 	@Autowired
 	private UtenteService usersService;
